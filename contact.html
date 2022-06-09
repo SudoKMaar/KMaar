@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KMaar Portfolio</title>
+    <!-- Fonts API -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .button-85 {
+            padding: 0.6em 2em;
+            margin-bottom: 5px;
+            border: none;
+            outline: none;
+            color: rgb(255, 255, 255);
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .button-85:before {
+            content: "";
+            background: linear-gradient( 45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing-button-85 20s linear infinite;
+            transition: opacity 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+        
+        @keyframes glowing-button-85 {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 400% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+        
+        .button-85:after {
+            z-index: -1;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="contactform">
+            <h1>Contact me for work/general enquires</h1>
+            <form action="https://formsubmit.co/abhi2004shek.kumar@gmail.com" method="POST" id="my-form">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/interactive-resume/thanks.html">
+                <div class="mb-3">
+                    <label for="clientemail" class="form-label">Name</label>
+                    <input type="name" class="form-control" id="clientemail" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="clientemail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="clientemail" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email and phone number with anyone else.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="clientphone" class="form-label">PhoneNumber</label>
+                    <input type="phone" class="form-control" id="clientphone">
+                </div>
+                <div class="mb-3">
+                    <label for="clientemail" class="form-label">Enquiry</label>
+                    <input type="name" class="form-control" id="clientemail" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3" id="form-check">
+                    <input type="checkbox" class="form-check-input" id="isclient">
+                    <label class="form-check-label" for="isclient">I want you to work on a project</label>
+                </div>
+                <button class="button-85" type="submit">Submit</button>
+
+                <!-- <a href="#" type="submit"><span>Submit</span></a></div>  -->
+            </form>
+        </div>
+    </div>
+
+    <div class="dd-elements">
+        <div class="menu menu--top-left" id="menu_top_left">
+            <a class="menu__hamburger_ico" dd-toggle="menu_top_left">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul class="menu__nav_list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/intro.html">Intro</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/interactive-resume/index.html">Interactive Resume</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+        <div class="menu menu--top-right" id="menu_top_right">
+            <a class="menu__hamburger_ico" dd-toggle="menu_top_right">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul class="menu__nav_list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/intro.html">Intro</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/interactive-resume/index.html">Interactive Resume</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        $('[dd-toggle]').on('click', function() {
+            var menu_id = $(this).attr('dd-toggle');
+            $('#' + menu_id).toggleClass('in');
+            $(this).toggleClass('in');
+        });
+    </script>
+
+</body>
+
+</html>

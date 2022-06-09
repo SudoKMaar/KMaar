@@ -1,0 +1,609 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-color: black;
+  color: #0f0;
+}
+.main {
+  /* background-color: yellow; */
+  overflow: hidden;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+}
+
+.infoContainer {
+  /* background-color: blue; */
+  /* height: 58vh; */
+  width: 80vw;
+  margin: 75px 75px;
+  display: flex;
+  justify-content: space-around;
+  color: #0f0;
+}
+
+.devInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 70px 70px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.hello {
+  font-size: 65px;
+}
+
+.name {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.about {
+  font-size: 40px;
+}
+
+.moreabout {
+  font-size: 22px;
+  font-family: cursive;
+  margin-top: 20px;
+}
+.btn a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #0f0;
+  margin: 40px;
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+  -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+  transition: 0.2s;
+  transition-delay: 0s;
+}
+
+.btn a:hover {
+  transition-delay: 0.5s;
+  color: #000;
+  box-shadow: 0 0 10px#0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #0f0, 0 0 160px #0f0;
+}
+
+.btn a span {
+  position: relative;
+  z-index: 100;
+}
+
+.btn a:nth-child(2) {
+  filter: hue-rotate(80deg);
+}
+
+.btn a::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #0f0;
+  box-shadow: 5px -8px 0 #0f0, 5px 8px 0 #0f0;
+  transition: width 0.25s, left 0.25s, height 0.25s, box-shadow 0.25s;
+  transition-delay: .5s, 0.25s, 0s, 0s;
+}
+
+.btn a:hover::before {
+  width: 60%;
+  height: 100%;
+  left: -2px;
+  box-shadow: 5px 0 0 #0f0, 5px 0 0 #0f0;
+  transition-delay: 0s, 0.25s, .5s, .5s;
+}
+
+.btn a::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: #0f0;
+  box-shadow: -5px -8px 0 #0f0, -5px 8px 0 #0f0;
+  transition: width 0.25s, left 0.25s, height 0.25s, box-shadow 0.25s;
+  transition-delay: .5s, 0.25s, 0s, 0s;
+}
+
+.btn a:hover::after {
+  width: 60%;
+  height: 100%;
+  right: -2px;
+  box-shadow: -5px 0 0 #0f0, -5px 0 0 #0f0;
+  transition-delay: 0s, 0.25s, .5s, .5s;
+}
+
+.devPic img {
+  height: 60vh;
+}
+
+/* intro.html */
+
+.main {
+  margin: 50px 50px;
+}
+
+.intro {
+  color: #0f0;
+}
+
+.intro h1 {
+  font-family: cursive;
+  margin: 12px;
+}
+
+.intro p {
+  font-family: 'Source Code Pro', monospace;
+  margin: 12px;
+}
+
+.intro h2 {
+  font-family: 'Roboto', sans-serif;
+  margin: 12px;
+}
+
+/* svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+}
+
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #191919;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+svg circle:nth-child(2) {
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+}
+
+.card:nth-child(1) svg circle:nth-child(2) {
+  stroke-dashoffset: calc (440 - (440 * 90) / 100);
+  stroke: #00ff43;
+}
+
+.card:nth-child(2) svg circle:nth-child(2) {
+  stroke: #00a1ff;
+  stroke-dashoffset: calc(440-(440*85)/100);
+}
+
+.card:nth-child(3) svg circle:nth-child(2) {
+  stroke: #ff04f7;
+  stroke-dashoffset: calc(440-(440*40)/100);
+}
+
+.skillcontainer {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.skillcontainer .card {
+  position: relative;
+  width: 250px;
+  background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.skillcontainer .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+}
+
+.skillcontainer .card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(225, 225, 225, .03);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.percentage {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #000;
+  background: #222;
+}
+
+.percentage .number {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.percentage .number h2 {
+  color: #777;
+  font-weight: 700;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+.card:hover .percentage .number h2 {
+  color: #fff;
+  font-size: 60px;
+}
+
+.percentage .number h2 span {
+  font-size: 24px;
+  color: #777;
+  transition: 0.5s;
+}
+
+.card:hover .percentage .number h2 span {
+  color: #fff;
+}
+
+.text {
+  position: relative;
+  color: #777;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.card:hover .text {
+  color: #fff;
+}
+
+.skillItem {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 900;
+}
+
+.skill {
+  width: 265px;
+  height: 6px;
+  background-color: red;
+  border: 2px solid black;
+}
+
+.hundered {
+  width: 300px;
+  background-color: aqua;
+}
+
+.fifty {
+  width: 150px;
+  background-color: blue;
+}
+
+.t5 {
+  width: 75pxpx;
+  background-color: yellow;
+} */
+.skills{
+  font-family: cursive;
+  font-size: 32px;
+  margin: 12px;
+}
+.skillcontainer{
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+.box {
+  position: relative;
+  height: 350px;
+  width: 250px;
+  background: #222;
+  border-radius: 5px;
+  margin: 30px;
+}
+.box .shadow {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.box svg {
+  position: absolute;
+  height: 160px;
+  width: 160px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+.box svg circle {
+  fill: transparent;
+  stroke: #007eff;
+  stroke-width: 10;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-linecap: round;
+  animation: stroke 13.5s steps(500) forwards;
+}
+.box .counter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.box .counter span {
+  font-size: 28px;
+  line-height: 50px;
+  font-weight: bold;
+}
+.box .counter span:after {
+  content: "0%\A 1%\A 2%\A 3%\A 4%\A 5%\A 6%\A 7%\A 8%\A 9%\A 10\A 11%\A 12%\A 13%\A 14%\A 15%\A 16%\A 17%\A 18%\A 19%\A 20%\A 21%\A 22%\A 23%\A 24%\A 25%\A 26%\A 27%\A 28%\A 29%\A 30%\A 31%\A 32%\A 33%\A 34%\A 35%\A 36%\A 37%\A 38%\A 39%\A 40%\A 41%\A 42%\A 43%\A 44%\A 45%\A 46%\A 47%\A 48%\A 49%\A 50%\A 51%\A 52%\A 53%\A 54%\A 55%\A 56%\A 57%\A 58%\A 59%\A 60%\A 61%\A 62%\A 63%\A 64%\A 65%\A 66%\A 67%\A 68%\A 69%\A 70%\A 71%\A 72%\A 73%\A 74%\A 75%\A 76%\A 77%\A 78%\A 79%\A 80%\A 81%\A 82%\A 83%\A 84%\A 85%\A 86%\A 87%\A 88%\A 89%\A 90%\A 91%\A 92%\A 93%\A 94%\A 95%\A 96%\A 97%\A 98%\A 99%\A 100%";
+  position: absolute;
+  white-space: pre;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animate 10s steps(100) forwards;
+}
+h2 {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 15%;
+  letter-spacing: 1px;
+}
+@keyframes animate {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: -5000px;
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.box svg .color1,
+.box .counter .color1 {
+  stroke: #ff004e;
+  color: #ff004e;
+}
+.box svg .color2,
+.box .counter .color2 {
+  stroke: #10e100;
+  color: #10e100;
+}
+.box svg .color3,
+.box .counter .color3 {
+  stroke: #2c80fd;
+  color: #2c80fd;
+}
+/*This is my youtube channel link*/
+#yt {
+  position: absolute;
+  bottom: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  right: 20px;
+  color: #fff;
+}
+#yt:hover {
+  color: red;
+}
+
+
+
+/* blog.html */
+
+.blogItem {
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.blogContainer h1 {
+  font-family: cursive;
+  margin: 20px;
+}
+
+.blogItem p {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.check {
+  visibility: hidden;
+}
+
+
+/* contact.html */
+
+.contactform {
+  font-family: 'Roboto', sans-serif;
+  padding: 0 34px;
+  padding-top: 50px;
+  color: #0f0;
+}
+
+.contactform h1 {
+  font-family: 'Source Code Pro', monospace;
+  padding: 12px 0;
+}
+
+.contactform form div {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactform form div input {
+  width: 26vw;
+  border-radius: 5px;
+  margin: 6px 0 0 0;
+  padding: 3px;
+}
+
+#emailHelp {
+  font-size: 11px;
+  margin: 0 5px;
+  padding: 3px 0 0 0;
+  color: yellow;
+}
+
+#form-check {
+  flex-direction: row;
+}
+
+#form-check input {
+  width: 24px;
+  margin: 3px 0;
+}
+
+.btn-sm {
+  font-size: 10px;
+  padding: 7px 12px;
+  margin: 10px 0;
+}
+#status {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+#status.success {
+  background-color: rgb(211, 250, 153);
+  animation: status 4s ease forwards;
+}
+#status.error {
+  background-color: rgb(250, 129, 92);
+  color: white;
+  animation: status 4s ease forwards;
+}
+
+
+/* blog.html */
+
+.blogItem {
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.blogContainer h1 {
+  font-family: cursive;
+  margin: 20px;
+}
+
+.blogItem p {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.check {
+  visibility: hidden;
+}
+
+.neon-button {
+  font-size: 25px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 0.125em #0f0;
+  padding: 0.25em 1em;
+  border-radius: 0.25em ;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+  position: relative;
+}
+
+.neon-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+  opacity: 1;
+}
+.neon-button:hover::after,
+.neon-button:focus::after {
+  opacity: 1;
+}

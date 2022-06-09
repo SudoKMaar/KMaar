@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KMaar Portfolio</title>
+    <!-- Fonts API -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="blogContainer">
+            <h1>Blogs by KMaar</h1>
+            <div class="blogItem">
+                <h2>Learn Coding in fun way</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt totam nulla sit eligendi voluptatibus vero commodi, temporibus eum illo voluptatum!</p>
+                <a href="#" class="neon-button">Read More</a>
+            </div>
+            <div class="blogItem">
+                <h2>Learn Coding in fun way</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt totam nulla sit eligendi voluptatibus vero commodi, temporibus eum illo voluptatum!</p>
+                <a href="#" class="neon-button">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="dd-elements">
+        <div class="menu menu--top-left" id="menu_top_left">
+            <a class="menu__hamburger_ico" dd-toggle="menu_top_left">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul class="menu__nav_list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/intro.html">Intro</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/interactive-resume/index.html">Interactive Resume</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+        <div class="menu menu--top-right" id="menu_top_right">
+            <a class="menu__hamburger_ico" dd-toggle="menu_top_right">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul class="menu__nav_list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/intro.html">Intro</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/interactive-resume/index.html">Interactive Resume</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        $('[dd-toggle]').on('click', function() {
+            var menu_id = $(this).attr('dd-toggle');
+            $('#' + menu_id).toggleClass('in');
+            $(this).toggleClass('in');
+        });
+    </script>
+
+</body>
+
+</html>

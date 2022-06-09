@@ -1,0 +1,244 @@
+.menu {
+	position: fixed;
+	width: 0;
+	height: 0;
+}
+.menu.menu--top-left {
+	top: 0;
+	left: 0;
+}
+.menu.menu--top-right {
+	top: 0;
+	right: 0;
+}
+.menu:after {
+	position: absolute;
+	content: "";
+	background: #393E46;
+	z-index: -1;
+	width: 0;
+	height: 0;
+	-webkit-transition: all .5s cubic-bezier(0, 0, 0, 1);
+	   -moz-transition: all .5s cubic-bezier(0, 0, 0, 1);
+	    -ms-transition: all .5s cubic-bezier(0, 0, 0, 1);
+	     -o-transition: all .5s cubic-bezier(0, 0, 0, 1);
+	        transition: all .5s cubic-bezier(0, 0, 0, 1);
+}
+.menu.menu--top-left:after {
+	border-bottom-right-radius: 100%;
+	top: 0;
+	left: 0;
+}
+.menu.menu--top-right:after {
+	top: 0;
+	right: 0;
+	border-bottom-left-radius: 100%;
+}
+.menu.in:after {
+	width: 50vh;
+	height: 50vh;
+}
+
+.menu.in {
+	width: 50vh;
+	height: 50vh;
+}
+
+.menu .menu__hamburger_ico {
+	position: relative;
+	display: inline-block;
+	background: #393E46;
+	color: #fff;
+	height: 70px;
+	width: 70px;
+	box-shadow: 0 0 0 10px #393E46;
+	-webkit-transition: all .25s ease-in;
+	   -moz-transition: all .25s ease-in;
+	    -ms-transition: all .25s ease-in;
+	     -o-transition: all .25s ease-in;
+	        transition: all .25s ease-in;
+	cursor: pointer;
+	z-index: 99;
+}
+.menu.menu--top-right .menu__hamburger_ico {
+	border-bottom-left-radius: 100%;
+	float: right;
+}
+.menu.menu--top-left .menu__hamburger_ico {
+	border-bottom-right-radius: 100%;
+	float: left;
+}
+
+.menu .menu__hamburger_ico:hover {
+	box-shadow: 0 0 0 10px #393E46;
+}
+
+.menu .menu__hamburger_ico span {
+	position: absolute;
+	display: inline-block;
+	height: 3px;
+	width: 40px;
+	border-radius: 10px;
+	background: #fff;
+	-webkit-transition: all .25s cubic-bezier(0, 0, 1, 1);
+	   -moz-transition: all .25s cubic-bezier(0, 0, 1, 1);
+	    -ms-transition: all .25s cubic-bezier(0, 0, 1, 1);
+	     -o-transition: all .25s cubic-bezier(0, 0, 1, 1);
+	        transition: all .25s cubic-bezier(0, 0, 1, 1);
+}
+.menu.menu--top-left .menu__hamburger_ico span {
+	left: 10px;
+}
+.menu.menu--top-right .menu__hamburger_ico span {
+	right: 10px;
+}
+.menu .menu__hamburger_ico span:first-child {
+	top: 20px;
+}
+.menu .menu__hamburger_ico span:nth-child(2) {
+	top: 35px;
+}
+.menu .menu__hamburger_ico span:last-child {
+	top: 50px;
+}
+.menu.menu--top-left .menu__hamburger_ico span:first-child {
+	transform-origin: left;
+}
+.menu.menu--top-right .menu__hamburger_ico span:first-child {
+	transform-origin: right;
+}
+
+.menu.menu--top-left .menu__hamburger_ico span:last-child {
+	transform-origin: left;
+}
+.menu.menu--top-right .menu__hamburger_ico span:last-child {
+	transform-origin: right;
+}
+
+.menu.menu--top-left .menu__hamburger_ico.in span:first-child {
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	     -o-transform: rotate(45deg);
+	        transform: rotate(45deg);
+}
+.menu.menu--top-left .menu__hamburger_ico.in span:last-child {
+	-webkit-transform: rotate(-45deg);
+	   -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	     -o-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+}
+.menu.menu--top-right .menu__hamburger_ico.in span:first-child {
+	-webkit-transform: rotate(-45deg);
+	   -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	     -o-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+}
+.menu.menu--top-right .menu__hamburger_ico.in span:last-child {
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	     -o-transform: rotate(45deg);
+	        transform: rotate(45deg);
+}
+.menu .menu__hamburger_ico.in span:nth-child(2) {
+	opacity: 0;
+}
+
+.menu .menu__nav_list {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	top: 50%;
+	-webkit-transform: translateY(-65%);
+	   -moz-transform: translateY(-65%);
+	    -ms-transform: translateY(-65%);
+	     -o-transform: translateY(-65%);
+	        transform: translateY(-65%);
+}
+.menu.menu--top-left .menu__nav_list {
+	left: 25%;
+	text-align: left;
+}
+.menu.menu--top-right .menu__nav_list {
+	right: 25%;
+	text-align: right;
+}
+.menu .menu__nav_list li a {
+	position: relative;
+	display: inline-block;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 40px;
+	color: #fff;
+	visibility: hidden;
+	opacity: 0;
+	text-decoration: none;
+}
+.menu.menu--top-left .menu__nav_list li a {
+	-webkit-transform: translateX(-25px);
+	   -moz-transform: translateX(-25px);
+	    -ms-transform: translateX(-25px);
+	     -o-transform: translateX(-25px);
+	        transform: translateX(-25px);
+}
+.menu.menu--top-right .menu__nav_list li a {
+	-webkit-transform: translateX(25px);
+	   -moz-transform: translateX(25px);
+	    -ms-transform: translateX(25px);
+	     -o-transform: translateX(25px);
+	        transform: translateX(25px);
+}
+.menu.in .menu__nav_list li a {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: translateX(0);
+	   -moz-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	     -o-transform: translateX(0);
+	        transform: translateX(0);
+	-webkit-transition: all .25s ease;
+	   -moz-transition: all .25s ease;
+	    -ms-transition: all .25s ease;
+	     -o-transition: all .25s ease;
+	        transition: all .25s ease;
+
+}
+.menu.in .menu__nav_list li a:before {
+	position: absolute;
+	content: " ";
+	width: 0;
+	height: 2px;
+	background: #fff;
+	border-radius: 5px;
+	top: 50%;
+	-webkit-transition: all .25s ease;
+	   -moz-transition: all .25s ease;
+	    -ms-transition: all .25s ease;
+	     -o-transition: all .25s ease;
+	        transition: all .25s ease;
+}
+.menu.in.menu--top-left .menu__nav_list li a:before {
+	margin-left: -5px;
+	left: -20px;
+}
+.menu.in.menu--top-right .menu__nav_list li a:before {
+	margin-right: -5px;
+	right: -20px;
+}
+.menu.in .menu__nav_list li a:hover:before {
+	width: 20px;
+}
+.menu.in .menu__nav_list li:nth-child(1) a { transition-delay: .15s; }
+.menu.in .menu__nav_list li:nth-child(2) a { transition-delay: .30s; }
+.menu.in .menu__nav_list li:nth-child(3) a { transition-delay: .45s; }
+.menu.in .menu__nav_list li:nth-child(4) a { transition-delay: .60s; }
+.menu.in .menu__nav_list li:nth-child(5) a { transition-delay: .75s; }
+.menu.in .menu__nav_list li:nth-child(6) a { transition-delay: .90s; }
+.menu.in .menu__nav_list li:nth-child(7) a { transition-delay: 1.05s; }
+.menu.in .menu__nav_list li:nth-child(8) a { transition-delay: 1.2s; }
+.menu.in .menu__nav_list li:nth-child(9) a { transition-delay: 1.35s; }
+.menu.in .menu__nav_list li:nth-child(10) a { transition-delay: 1.5s; }

@@ -1,0 +1,611 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&family=Syne+Tactile&display=swap');
+@keyframes checked-anim {
+    50% {
+        width: 3000px;
+        height: 3000px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes not-checked-anim {
+    0% {
+        width: 3000px;
+        height: 3000px;
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+li,
+a {
+    margin: 75px 0 -55px 0;
+    color: lime;
+    font: 20pt "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 1.8;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    outline: 0;
+    display: none;
+}
+
+li {
+    width: 230px;
+    text-indent: 56px;
+}
+
+a:focus {
+    display: block;
+    color: #333;
+    background-color: rgb(180, 255, 4);
+    transition: all .5s;
+    z-index: 100000;
+}
+
+aside {
+    position: absolute;
+    color: white;
+    top: 35%;
+    right: 10%;
+    text-align: right;
+}
+
+
+/* h1 {
+    line-height: 0;
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+h3 {
+    float: right;
+    line-height: .3;
+    font-size: 2.5vw;
+    font-weight: lighter;
+}
+
+h4 {
+    float: left;
+    margin-left: -2%;
+    font-size: 1.5vw;
+    font-weight: lighter;
+} */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+#trigger,
+#burger,
+#burger:before,
+#burger:after {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: #00e632;
+    width: 30px;
+    height: 5px;
+    transition: .2s ease;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+#trigger {
+    height: 25px;
+    background: none;
+}
+
+#burger:before {
+    content: " ";
+    top: 10px;
+    left: 0;
+    z-index: 100000;
+}
+
+#burger:after {
+    content: " ";
+    top: 20px;
+    left: 0;
+    z-index: 100000;
+}
+
+#menu-toggle:checked+#trigger+#burger {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked+#trigger+#burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+
+#menu-toggle:checked+#trigger+#burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+
+#menu {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+    height: 110px;
+    background-color: #606060ff;
+    border-bottom-right-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    animation: not-checked-anim .2s both;
+    transition: .2s;
+}
+
+#menu-toggle:checked+#trigger+#burger+#menu {
+    animation: checked-anim 1s ease both;
+}
+
+#menu-toggle:checked+#trigger~#menu>li,
+a {
+    display: block;
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    display: none;
+}
+
+
+/* index.html */
+
+.main {
+    /* background-color: yellow; */
+    width: 100vw;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.infoContainer {
+    /* background-color: blue; */
+    height: 58vh;
+    width: 80vw;
+    margin: 5vw 5vh;
+    display: flex;
+    justify-content: space-around;
+    color: #0f0;
+}
+
+.devInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.hello {
+    font-size: 65px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.about {
+    font-size: 40px;
+}
+
+.moreabout {
+    font-size: 22px;
+    font-family: cursive;
+    margin-top: 20px;
+}
+
+
+/* .buttons {
+    margin-top: 34px;
+} */
+
+
+/* 
+.btn button {
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: aliceblue;
+    background-color: dodgerblue;
+    font-weight: bold;
+    font-size: 21px;
+    margin: 0 3px;
+}
+
+.btn button:hover {
+    background-color: aliceblue;
+    color: dodgerblue;
+    cursor: pointer;
+} */
+
+.btn a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #0f0;
+    margin: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #fff;
+    -webkit-box-reflect: below 0px linear-gradient(transparent, #0002);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.btn a:hover {
+    transition-delay: 1.5s;
+    color: #000;
+    box-shadow: 0 0 10px#0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #0f0, 0 0 160px #0f0;
+}
+
+.btn a span {
+    position: relative;
+    z-index: 0;
+}
+
+.btn a:nth-child(2) {
+    filter: hue-rotate(80deg);
+}
+
+.btn a::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #0f0;
+    box-shadow: 5px -8px 0 #0f0, 5px 8px 0 #0f0;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.btn a:hover::before {
+    width: 60%;
+    height: 100%;
+    left: -2px;
+    box-shadow: 5px 0 0 #0f0, 5px 0 0 #0f0;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.btn a::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background: #0f0;
+    box-shadow: -5px -8px 0 #0f0, -5px 8px 0 #0f0;
+    transition: width 0.5s, left 0.5s, height 0.5s, box-shadow 0.5s;
+    transition-delay: 1s, 0.5s, 0s, 0s;
+}
+
+.btn a:hover::after {
+    width: 60%;
+    height: 100%;
+    right: -2px;
+    box-shadow: -5px 0 0 #0f0, -5px 0 0 #0f0;
+    transition-delay: 0s, 0.5s, 1s, 1s;
+}
+
+.devPic img {
+    height: 60vh;
+}
+
+
+/* intro.html */
+
+.main {
+    margin: 50px 50px;
+}
+
+.intro {
+    color: #0f0;
+}
+
+.project {
+    align-content: center;
+    margin: 10px;
+}
+
+.intro h1 {
+    font-family: cursive;
+    margin: 12px;
+}
+
+.intro p {
+    font-family: 'Source Code Pro', monospace;
+    margin: 12px;
+}
+
+.intro h2 {
+    font-family: 'Roboto', sans-serif;
+    margin: 12px;
+}
+
+svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+}
+
+svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #191919;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+svg circle:nth-child(2) {
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+.card:nth-child(1) svg circle:nth-child(2) {
+    stroke-dashoffset: calc (440 - (440 * 90) / 100);
+    stroke: #00ff43;
+}
+
+.card:nth-child(2) svg circle:nth-child(2) {
+    stroke: #00a1ff;
+    stroke-dashoffset: calc(440-(440*85)/100);
+}
+
+.card:nth-child(3) svg circle:nth-child(2) {
+    stroke: #ff04f7;
+    stroke-dashoffset: calc(440-(440*40)/100);
+}
+
+.skillcontainer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skillcontainer .card {
+    position: relative;
+    width: 250px;
+    background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-radius: 4px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.skillcontainer .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .5);
+}
+
+.skillcontainer .card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(225, 225, 225, .03);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.percentage {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #000;
+    background: #222;
+}
+
+.percentage .number {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.percentage .number h2 {
+    color: #777;
+    font-weight: 700;
+    font-size: 40px;
+    transition: 0.5s;
+}
+
+.card:hover .percentage .number h2 {
+    color: #fff;
+    font-size: 60px;
+}
+
+.percentage .number h2 span {
+    font-size: 24px;
+    color: #777;
+    transition: 0.5s;
+}
+
+.card:hover .percentage .number h2 span {
+    color: #fff;
+}
+
+.text {
+    position: relative;
+    color: #777;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.card:hover .text {
+    color: #fff;
+}
+
+.skillItem {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 900;
+}
+
+.skill {
+    width: 265px;
+    height: 6px;
+    background-color: red;
+    border: 2px solid black;
+}
+
+.hundered {
+    width: 300px;
+    background-color: aqua;
+}
+
+.fifty {
+    width: 150px;
+    background-color: blue;
+}
+
+.t5 {
+    width: 75pxpx;
+    background-color: yellow;
+}
+
+
+/* blog.html */
+
+.blogItem {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blogContainer h1 {
+    font-family: cursive;
+    margin: 20px;
+}
+
+.blogItem p {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.check {
+    visibility: hidden;
+}
+
+
+/* contact.html */
+
+.contactform {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 34px;
+    padding-top: 50px;
+}
+
+.contactform h1 {
+    font-family: 'Source Code Pro', monospace;
+    padding: 12px 0;
+}
+
+.contactform form div {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform form div input {
+    width: 26vw;
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+}
+
+#emailHelp {
+    font-size: 11px;
+    margin: 0 5px;
+    padding: 3px 0 0 0;
+    color: yellow;
+}
+
+#form-check {
+    flex-direction: row;
+}
+
+#form-check input {
+    width: 24px;
+    margin: 3px 0;
+}
+
+.btn-sm {
+    font-size: 10px;
+    padding: 7px 12px;
+    margin: 10px 0;
+}
+
+
+/* blog.html */
+
+.blogItem {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blogContainer h1 {
+    font-family: cursive;
+    margin: 20px;
+}
+
+.blogItem p {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.check {
+    visibility: hidden;
+}
